@@ -1,4 +1,5 @@
 jenkins_home/
+jenkins_home
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
