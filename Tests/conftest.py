@@ -1,6 +1,7 @@
 import pytest
 import allure
 from allure_commons.types import AttachmentType
+from pyvirtualdisplay import Display
 
 from Driver.driver import Driver
 from Data.test_data import Config
@@ -11,6 +12,8 @@ from Data.credentials import user, admin
 @pytest.fixture(scope='function')
 def driver_init(request):
     '''Instantiate webdriver for selected browser and open homepage'''
+    display = Display(visible = 0, size = (800, 800))
+    display.start()
     driver = Driver(Config.BROWSER).set_browser()
     driver.delete_all_cookies()
     driver.maximize_window()
