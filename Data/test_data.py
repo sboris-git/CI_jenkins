@@ -3,6 +3,6 @@ class Config:
 
     TEST_MODE = True  # False
     HOME_URL = 'https://www.linkedin.com/login'
-    BROWSER = 'Chrome'
-    # BROWSER = 'Firefox'
+    # BROWSER = 'Chrome'
+    BROWSER = 'Firefox'
     # BROWSER = 'IE'
