@@ -38,6 +38,7 @@ class Driver:
             return webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
         elif self.browser.lower() == "ie":
+            return webdriver.Ie(IEDriverManager().install(), options=options)
             '''The IE driver does not support execution without an active, 
             logged-in desktop session running. You'll need to take this up with 
             the author of the solution you're using to achieve "headless" 
