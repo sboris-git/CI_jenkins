@@ -2,15 +2,17 @@
 
 pipeline {
     
-    agent any
-        
-    environment {
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"    
-        }
+    agent any        
         
     stages {
-
+        
+        stage('Init') {
+            steps {
+                def dockerHome = tool 'myDocker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"    
+            }
+        } 
+        
         stage('Build') {
             agent {
                 docker {
