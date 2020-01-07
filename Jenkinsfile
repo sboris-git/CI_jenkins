@@ -1,13 +1,14 @@
 #!groovy
-script{
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
 
 pipeline {
     
     agent any
-
+        
+    environment {
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"    
+        }
+        
     stages {
 
         stage('Build') {
