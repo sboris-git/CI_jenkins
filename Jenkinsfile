@@ -1,6 +1,9 @@
 #!groovy
 
-def dockerHome = tool 'myDocker'
+// How to implement this?
+// environment {
+//    def dockerHome = tool 'myDocker'
+//   }
 
 pipeline {
     
@@ -11,7 +14,7 @@ pipeline {
         stage('Init') {
             steps {
                 script {
-                    // def dockerHome = tool 'myDocker'
+                    def dockerHome = tool 'myDocker'
                     env.PATH = "${dockerHome}/bin:${env.PATH}"    
                 }
             }
