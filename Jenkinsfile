@@ -1,4 +1,6 @@
 #!groovy
+def dockerHome = tool 'myDocker'
+env.PATH = "${dockerHome}/bin:${env.PATH}"
 
 pipeline {
     
@@ -9,8 +11,7 @@ pipeline {
         stage('Initialize'){
             steps{
                  script {
-                    def dockerHome = tool 'myDocker'
-                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                    echo 'script'
                 }
             }
         }
