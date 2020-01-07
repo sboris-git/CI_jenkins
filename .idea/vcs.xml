@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/ATQC-096_maven" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/CH_096_TAQC_pipe" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/FromDockerJenkins" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/Start_example" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jenkins_home/workspace/pytestParametrizeReadExcelData" vcs="Git" />

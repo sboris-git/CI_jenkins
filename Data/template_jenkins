@@ -1,0 +1,24 @@
+pipeline {
+   agent none
+
+   stages {
+
+      stage('Git_pull_tests') {
+         steps {
+            // Get some code from a GitHub repository
+            // sh 'cd /CH_096_TAQC/'
+            git 'https://github.com/sboris-git/CI_jenkins.git'
+         }
+      }
+
+      stage('Run_tests_in_container'){
+      agent { docker {
+        image 'sbacaddocker/proc:latest'
+        args  '-it',\
+              '-v /home/stable/Documents/Automation_SS/Python/Docker/Docker_tutorials/Linking_containers/CI_jenkins.git:/CI_jenkins.git',\
+              'py.test /CI_jenkins.git/Tests/test_linkedin_tmp_boris.py'
+                }
+            }
+      }
+   }
+}
