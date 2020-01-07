@@ -8,14 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Initialize'){
-            steps{
-                 script {
-                    echo 'script'
-                }
-            }
-        }
-
         stage('Build') {
             agent {
                 docker {
