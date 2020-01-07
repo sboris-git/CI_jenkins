@@ -1,6 +1,6 @@
 #!groovy
 def dockerHome = tool 'myDocker'
-env.PATH = "${dockerHome}/bin:${env.PATH}"
+def env.PATH = "${dockerHome}/bin:${env.PATH}"
 
 pipeline {
     
