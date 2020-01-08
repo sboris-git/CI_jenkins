@@ -1,21 +1,17 @@
-#!/usr/bin/env groovy
-import hudson.model.*
-
-def dockerHome = tool 'myDocker'
+// def dockerHome = tool 'myDocker'
 // How to implement this?
 // environment {
 //    def dockerHome = tool 'myDocker'
 //   }
 
-pipeline {
+node {
     
     agent any 
     
-    environment {
-        PATH = "${dockerHome}/bin:${PATH}" 
+    stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
-    
-    stages { 
         
         stage('Build') {
             agent {
@@ -27,5 +23,5 @@ pipeline {
                 sh 'python --version'
             }
         }
-    }
+   
 }
