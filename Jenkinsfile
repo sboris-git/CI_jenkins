@@ -1,17 +1,19 @@
-// def dockerHome = tool 'myDocker'
+def dockerHome
 // How to implement this?
 // environment {
 //    def dockerHome = tool 'myDocker'
 //   }
 
-node {
+pipeline {
     
     agent any 
     
-    stage('Initialize'){
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
+    stages {
+    
+        stage('Initialize'){
+            dockerHome = tool 'myDocker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+        }
         
         stage('Build') {
             agent {
@@ -23,5 +25,5 @@ node {
                 sh 'python --version'
             }
         }
-   
+    }
 }
