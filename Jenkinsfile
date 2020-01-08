@@ -1,4 +1,5 @@
-//def dockerHome
+ 
+def dockerHome
 // How to implement this?
 // environment {
 //    def dockerHome = tool 'myDocker'
@@ -10,7 +11,16 @@ pipeline {
    
     
     stages {
-       
+    
+        stage('Initialize'){
+            steps{  
+               script {
+                  dockerHome = tool 'myDocker'
+                  env.PATH = "${dockerHome}/bin:${env.PATH}"
+               }  
+            }    
+        }
+        
         stage('Build') {
             agent {
                 docker {
