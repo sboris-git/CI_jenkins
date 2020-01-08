@@ -1,4 +1,5 @@
 def dockerHome
+def env.PATH 
 // How to implement this?
 // environment {
 //    def dockerHome = tool 'myDocker'
