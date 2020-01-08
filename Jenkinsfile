@@ -1,4 +1,5 @@
-#!groovy
+#!/usr/bin/env groovy
+import hudson.model.*
 
 def dockerHome = tool 'myDocker'
 // How to implement this?
