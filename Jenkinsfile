@@ -11,8 +11,10 @@ pipeline {
     stages {
     
         stage('Initialize'){
-            dockerHome = tool 'myDocker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
+            script {
+               dockerHome = tool 'myDocker'
+               env.PATH = "${dockerHome}/bin:${env.PATH}"
+            }    
         }
         
         stage('Build') {
