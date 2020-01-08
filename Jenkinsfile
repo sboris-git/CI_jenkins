@@ -26,9 +26,6 @@ pipeline {
                     image 'python:3.5.1'
                 }
             }
-            environment {
-               env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
             
             steps {
                 sh 'python --version'
