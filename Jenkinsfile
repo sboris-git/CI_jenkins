@@ -1,5 +1,4 @@
 def dockerHome
-def env.PATH 
 // How to implement this?
 // environment {
 //    def dockerHome = tool 'myDocker'
@@ -8,6 +7,7 @@ def env.PATH
 pipeline {
     
     agent any 
+   
     
     stages {
     
@@ -26,6 +26,10 @@ pipeline {
                     image 'python:3.5.1'
                 }
             }
+            environment {
+               PATH = "${dockerHome}/bin:${PATH}"
+            }
+            
             steps {
                 sh 'python --version'
             }
