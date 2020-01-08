@@ -27,7 +27,7 @@ pipeline {
                 }
             }
             environment {
-               PATH = "${dockerHome}/bin:${PATH}"
+               env.PATH = "${dockerHome}/bin:${env.PATH}"
             }
             
             steps {
