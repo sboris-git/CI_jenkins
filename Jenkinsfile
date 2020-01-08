@@ -11,7 +11,7 @@ pipeline {
     agent any 
     
     environment {
-        env.PATH = "${dockerHome}/bin:${env.PATH}" 
+        PATH = "${dockerHome}/bin:${PATH}" 
     }
     
     stages { 
