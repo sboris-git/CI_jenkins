@@ -1,5 +1,6 @@
 #!groovy
 
+def dockerHome = tool 'myDocker'
 // How to implement this?
 // environment {
 //    def dockerHome = tool 'myDocker'
@@ -10,7 +11,6 @@ pipeline {
     agent any 
     
     environment {
-        def dockerHome = tool 'myDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}" 
     }
     
