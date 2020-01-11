@@ -1,6 +1,0 @@
-Trying to download new driver from http://chromedriver.storage.googleapis.com/78.0.3904.105/chromedriver_linux64.zip
-Unpack archive /home/stable/.wdm/drivers/chromedriver/78.0.3904.105/linux64/chromedriver.zip
-Locating and fill in username
-Locating and fill in password form...
-It is expected the page title starts with "Intentionally down the test".The actual title is "Security Verification | LinkedIn"
-executing test failed Tests/test_linkedin_tmp_boris.py::test_login
