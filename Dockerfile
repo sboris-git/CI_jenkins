@@ -18,9 +18,9 @@ ENV GIT_URL https://github.com/sboris-git/CI_jenkins.git
 ENV REBUILD "FALSE"
 
 RUN git clone $GIT_URL
-
-RUN pip install -r /CI_jenkins/requirements.txt
-
+WORKDIR $WORKSPACE/CI_jenkins
+RUN pip install -r requirements.txt
+RUN cat requirements.txt
 # CMD sh -c "py.test -v /CI_jenkins/Tests/test_event_menu.py"
 ENTRYPOINT ["py.test -v"]
 # CMD ["-s",  "$CI_jenkins/Tests/test_linkedin_tmp_boris.py", "--alluredir=I_jenkins/Allure_results"]
