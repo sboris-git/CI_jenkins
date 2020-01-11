@@ -1,6 +1,6 @@
 FROM python:3.7
 
-# VOLUME /CH_096_TAQC
+# VOLUME /CI_jenkins
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F
 
@@ -14,11 +14,11 @@ RUN apt update && apt install -y firefox
 
 
 ENV APP_URL http://eventexpress.com/
-ENV GIT_URL https://github.com/mehalyna/CH_096_TAQC.git
+ENV GIT_URL https://github.com/sboris-git/CI_jenkins.git
 ENV REBUILD "FALSE"
 
 RUN git clone $GIT_URL
 
-RUN pip install -r /CH_096_TAQC/requirements.txt
+RUN pip install -r /CI_jenkins/requirements.txt
 
-CMD sh -c "py.test -v /CH_096_TAQC/Tests/test_event_menu.py"
+CMD sh -c "py.test -v /CI_jenkins/Tests/test_event_menu.py"
