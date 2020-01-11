@@ -23,4 +23,4 @@ RUN pip install -r /CI_jenkins/requirements.txt
 
 # CMD sh -c "py.test -v /CI_jenkins/Tests/test_event_menu.py"
 ENTRYPOINT ["py.test -v"]
-CMD ["-s",  "$CI_jenkins/Tests/test_linkedin_tmp_boris.py", "--alluredir=I_jenkins/Allure_results"]
+# CMD ["-s",  "$CI_jenkins/Tests/test_linkedin_tmp_boris.py", "--alluredir=I_jenkins/Allure_results"]
