@@ -22,7 +22,9 @@ WORKDIR $WORKSPACE/CI_jenkins
 RUN pip install -r requirements.txt
 # RUN cat requirements.txt
 
-WORKDIR $WORKSPACE/CI_jenkins/SelectedTestsToBeRun
+#WORKDIR $WORKSPACE/CI_jenkins/SelectedTestsToBeRun
+WORKDIR $WORKSPACE/CI_jenkins/Tests
+
 
 ENTRYPOINT ["/bin/bash"]
 # CMD ["-s",  "$CI_jenkins/Tests/test_linkedin.py", "--alluredir=CI_jenkins/Allure_results"]
