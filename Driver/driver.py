@@ -1,7 +1,6 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import IEDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
@@ -22,7 +21,7 @@ class Driver:
         self.browser = browser
 
     def set_browser(self, mode):
-        '''mode is set to True, runs rests in silent mode: no UI while testing'''
+        '''mode is set to True, runs tests in silent mode: no UI while testing'''
 
         if self.browser.lower() == "firefox":
             options = FirefoxOptions()
@@ -36,15 +35,6 @@ class Driver:
             # options.add_argument("--no-sandbox")
             # options.add_argument("window-size=1400,2100")  # Linux should be activate
             return webdriver.Chrome(ChromeDriverManager().install(), options=options)
-
-        elif self.browser.lower() == "ie":
-            return webdriver.Ie(IEDriverManager().install(), options=options)
-            '''The IE driver does not support execution without an active, 
-            logged-in desktop session running. You'll need to take this up with 
-            the author of the solution you're using to achieve "headless" 
-            (scare quotes intentional) execution of IE.'''
-            options = 'unsupported'
-            return webdriver.Ie(IEDriverManager().install(), options=options)
 
         else:
             raise Exception("Selected browser not supported")

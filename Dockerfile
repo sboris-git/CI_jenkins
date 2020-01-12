@@ -25,5 +25,4 @@ RUN pip install -r requirements.txt
 WORKDIR $WORKSPACE/CI_jenkins/SelectedTestsToBeRun
 
 ENTRYPOINT ["/bin/bash"]
-# CMD ["-s",  "$CI_jenkins/Tests/test_linkedin_tmp_boris.py", "--alluredir=I_jenkins/Allure_results"]
-# CMD sh -c "py.test -v /CI_jenkins/Tests/test_event_menu.py"
+# CMD ["-s",  "$CI_jenkins/Tests/test_linkedin.py", "--alluredir=CI_jenkins/Allure_results"]
