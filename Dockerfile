@@ -27,4 +27,4 @@ WORKDIR $WORKSPACE/CI_jenkins/Tests
 
 
 ENTRYPOINT ["/bin/bash"]
-CMD ["py.test", "-v", "--setup-show", "--alluredir=CI_jenkins/Allure_results"]
+CMD ["py.test", "-v", "--setup-show", "--alluredir=$WORKSPACE/CI_jenkins/Reports_Allure"]
