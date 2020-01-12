@@ -14,7 +14,7 @@ def test_login(app, screenshot_on_failure):
     app.linked.press_button_signin()
 
     # get title of the page
-    expected_title = 'Intentionally down the test' # 'Security Verification'
+    expected_title = 'Intentionally down the test' # for testing purpose
     actual_title = app.linked.title
     print(f'It is expected the page title starts with "{expected_title}".'
           f'The actual title is "{actual_title}"')
@@ -22,6 +22,6 @@ def test_login(app, screenshot_on_failure):
     assert expected_title in actual_title
     print("Assertion completed")
 
-# py.test --alluredir=/home/stable/Documents/Automation_SS/Python/CH_096_TAQC/Reports_Allure
-# allure serve /home/stable/Documents/Automation_SS/Python/CI_j/Reports_Allure
-# (venv_demo2) stable@Castle:~/Documents/Automation_SS/Python/CI_jenkins$ py.test -v --setup-show --alluredir=/home/stable/Documents/Automation_SS/Python/CI_jenkins/Reports_Allure /home/stable/Documents/Automation_SS/Python/CI_jenkins/Tests/test_linkedin.py
+# py.test --alluredir=/home/stable/Documents/Automation_SS/Python/CH_096_TAQC/Reports_Allure0
+# allure serve /home/stable/Documents/Automation_SS/Python/CI_j/Reports_Allure0
+# (venv_demo2) stable@Castle:~/Documents/Automation_SS/Python/CI_jenkins$ py.test -v --setup-show --alluredir=/home/stable/Documents/Automation_SS/Python/CI_jenkins/Reports_Allure0 /home/stable/Documents/Automation_SS/Python/CI_jenkins/Tests/test_linkedin.py
