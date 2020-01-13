@@ -24,9 +24,10 @@ WORKDIR $WORKSPACE/CI_jenkins
 RUN pip install -r requirements.txt
 # RUN cat requirements.txt
 #WORKDIR $WORKSPACE/CI_jenkins/SelectedTestsToBeRun
-WORKDIR $WORKSPACE/CI_jenkins/Tests
+# WORKDIR $WORKSPACE/CI_jenkins/Tests
+WORKDIR $WORKSPACE/CI_jenkins
 RUN ls
 # ENTRYPOINT ["/bin/bash"]
-CMD ["py.test", "-v", "--setup-show", "--alluredir=/CI_jenkins/Reports_Allure"]
+CMD ["py.test", "-v", "--setup-show", "/Tests", "--alluredir=/Reports_Allure"]
 # CMD ["py.test", "-v", "--setup-show", "--alluredir=/CI_jenkins/Reports_Allure"]
 
