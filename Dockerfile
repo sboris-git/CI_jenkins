@@ -28,7 +28,7 @@ WORKDIR $WORKSPACE/CI_jenkins
 RUN ls Tests
 RUN pwd
 # ENTRYPOINT ["/bin/bash"]
-CMD ["py.test", "-v", "--rootdir=Tests", "--alluredir=$WORKSPACE/CI_jenkins/Reports_Allure"]
+CMD ["py.test", "-v", "--rootdir=Tests", "--alluredir=/CI_jenkins/Reports_Allure"]
 # CMD ["py.test", "-v", "--rootdir=Tests", "--alluredir=Reports_Allure"]
 
 # py.test -v --rootdir=Tests --alluredir=Reports_Allure
